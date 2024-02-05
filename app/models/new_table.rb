@@ -1,0 +1,2 @@
+class NewTable < ApplicationRecord
+end
