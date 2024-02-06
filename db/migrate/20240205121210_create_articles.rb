@@ -1,5 +1,5 @@
 class CreateArticles < ActiveRecord::Migration[7.1]
-  def change
+  def up
     create_table :articles do |t|
       t.string :title
       t.text :body
@@ -8,7 +8,7 @@ class CreateArticles < ActiveRecord::Migration[7.1]
     end
   end
 
-  def downHello
+  def down
     drop_table :articles
   end
 end
