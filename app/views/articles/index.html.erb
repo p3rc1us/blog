@@ -1,0 +1,24 @@
+<h1>Hello World!</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Author</th>
+        <th>Co-Author</th>
+    </tr>
+    </thead>
+
+    <tbody>
+        <% @articles.each do |article| %>
+        <tr>
+        <td><%= article.id %></td>
+        <td><%= article.title%></td>
+        <td><%= article.body%></td>
+        <td><%= article.author_name%></td>
+        <td><%= article.co_author_name%></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
