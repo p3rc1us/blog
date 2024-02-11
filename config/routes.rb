@@ -14,9 +14,14 @@ Rails.application.routes.draw do
 
   
   #new and create
-  get '/articles/new', to: 'articles#new', as: :new_article
+  get '/articles/new', to: 'articles#new', as: :new_article #add _path sa dulo ng variable
   post '/articles', to: 'articles#create'
   
   get '/articles/:id', to: 'articles#show', as: :article
+
+  #edit and update
+  get '/articles/:id/edit', to: 'articles#edit', as: :edit_article
+  patch '/articles/:id', to: 'articles#update', as: :update_article
+  
   
 end

@@ -1,0 +1,41 @@
+<%= form_with model: article do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+    <% article.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %><br>
+    <% article.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  
+  <div>
+    <%= form.label :author_name %><br>
+    <%= form.text_area :author_name %><br>
+    <% article.errors.full_messages_for(:author_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :co_author_name %><br>
+    <%= form.text_area :co_author_name %><br>
+    <% article.errors.full_messages_for(:co_author_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div class="cursor-pointer">
+    <%= form.submit "Save"%>
+  </div>
+
+  <div>
+    <%= link_to "Back to articles", articles_path%>
+</div>
+<% end %>
