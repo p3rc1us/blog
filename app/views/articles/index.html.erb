@@ -1,5 +1,6 @@
 <p class="flex justify-center text-3xl font-light p-3">Articles</p>
-<table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+<div class="overflow-y-auto max-h-[700px]">
+<table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
     <tr>
         <th scope="col" class="px-6 py-5">ID</th>
@@ -25,6 +26,7 @@
         <% end %>
     </tbody>
 </table>
+</div>
 
 <div>
 <%= link_to "Click to add new", new_article_path %>
