@@ -1,4 +1,5 @@
-class ArticlesController < ApplicationController 
+class ArticlesController < ApplicationController
+  # before_action :set_article 
   def index
     @articles = Article.order(:id)
   end
