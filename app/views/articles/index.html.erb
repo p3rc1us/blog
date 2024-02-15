@@ -1,3 +1,6 @@
+<% if flash[:notice] %>
+  <div class="notice text-blue-500"><%= flash[:notice] %></div>
+<% end %>
 <p class="flex justify-center text-3xl font-light p-3">Articles</p>
 <div class="overflow-y-auto max-h-[700px]">
 <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">

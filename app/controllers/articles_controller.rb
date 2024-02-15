@@ -12,13 +12,14 @@ class ArticlesController < ApplicationController
   end
 
   def create
-		@article = Article.new
-		@article.title = params[:title]
-		@article.body = params[:body]
-		@article.author_name = params[:author_name]
-    @article.co_author_name = params[:co_author_name]
+		@article = Article.new(article_params)
+		# @article.title = params[:title]                                   #--- eto ung equivalent ng article_params manually
+		# @article.body = params[:body]
+		# @article.author_name = params[:author_name]
+    # @article.co_author_name = params[:co_author_name]   
 
 		if @article.save
+      flash[:notice] = "Article successfully created"
 			redirect_to articles_path
 		else
 			render :new
@@ -33,6 +34,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
 
     if @article.update(article_params)
+      flash[:notice] = "Article successfully edited"
       redirect_to articles_path
     else
       render :edit, status: :unprocessable_entity
@@ -42,7 +44,7 @@ class ArticlesController < ApplicationController
   def destroy                                                  #----------------------------destroy-------------------------------#
     @article = Article.find(params[:id])
     @article.destroy
-
+    flash[:notice] = "Article successfully destroyed"
     redirect_to articles_path, status: :see_other
   end
 

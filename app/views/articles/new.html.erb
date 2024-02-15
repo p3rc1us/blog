@@ -1,25 +1,36 @@
 <h1>New Article</h1>
-<!-- <%= render "form", article: @article %> -->
-
-<%= form_with url: articles_path do |form| %>
+<%= render "form", article: @article %>
+<!-- <%= form_with model: @article do |form| %>
 <p>
     <%= form.label :title %><br/>
-    <%= form.text_field :title %>
+    <%= form.text_field :title %><br/>
+    <% @article.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
 </p>
 
 <p>
     <%= form.label :body %><br/>
-    <%= form.text_area :body %>
+    <%= form.text_area :body %><br/>
+    <% @article.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
 </p>
 
 <p>
     <%= form.label :author_name %><br/>
-    <%= form.text_field :author_name %>
+    <%= form.text_field :author_name %><br/>
+    <% @article.errors.full_messages_for(:author_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
 </p>
 
 <p>
     <%= form.label :co_author_name %><br/>
-    <%= form.text_area :co_author_name %>
+    <%= form.text_area :co_author_name %><br/>
+    <% @article.errors.full_messages_for(:co_author_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
 </p>
 
 <p>
@@ -31,4 +42,4 @@
 
 <div>
 <%= link_to "Back to articles", articles_path%>
-</div>
+</div> -->
