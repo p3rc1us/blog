@@ -10,18 +10,19 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  get '/articles', to: 'articles#index', as: :articles #ArticlesController class ang hahanapin with index method
+  # get '/articles', to: 'articles#index', as: :articles #ArticlesController class ang hahanapin with index method
 
   
-  #new and create
-  get '/articles/new', to: 'articles#new', as: :new_article #add _path sa dulo ng variable
-  post '/articles', to: 'articles#create'
+  # #new and create
+  # get '/articles/new', to: 'articles#new', as: :new_article #add _path sa dulo ng variable
+  # post '/articles', to: 'articles#create'
   
-  get '/articles/:id', to: 'articles#show', as: :article
+  # get '/articles/:id', to: 'articles#show', as: :article
 
-  #edit and update
-  get '/articles/:id/edit', to: 'articles#edit', as: :edit_article
-  patch '/articles/:id', to: 'articles#update', as: :update_article
+  # #edit and update
+  # get '/articles/:id/edit', to: 'articles#edit', as: :edit_article
+  # patch '/articles/:id', to: 'articles#update', as: :update_article
   
-  delete '/articles/:id', to: 'articles#destroy', as: :destroy_article
+  # delete '/articles/:id', to: 'articles#destroy', as: :destroy_article
+  resources :articles
 end
